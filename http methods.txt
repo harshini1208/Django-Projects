@@ -1,0 +1,91 @@
+REQUEST METHODS:
+
+1)GET METHOD--get data i.e expecting data from server side
+2)POST METHOD-to send data i.e submitting data to server side program
+
+GET REQUEST:
+-by default it is get request
+-Get can also submit data(but small or limited amount of data) and that data will be displayed on browser window
+ i.e if get is used,query string can be visible on browser
+ but post-->query string is not visible thats why it is more reliable
+
+Limitations of get req:
+1)URL length shud not be more than 256 charcaters
+ in get-->query string will be appended to url
+ in post-->vice versa
+2)data entered or query string is visible
+
+q)how will you know whether it is get req or post req?
+ Get req can be made in 3 ways:
+
+1)typing url
+2)submit form
+3)hyperlink
+
+post req can be performed only in one way
+1)submit form
+
+q)what is diff btw GET and POST
+GET:
+1)it is  default req model
+2)gets data from server side program,here we can also post limited data to server side program
+3)query string is visible
+4)limited data can only be posted to server side application bcoz there is limitation for length of url
+5)sensitive data like pw username cannot be posted
+
+6)get req can be made in 3 ways-a mentioned above
+
+POST:
+1)itv is not default
+2)posts data to server side program
+3)query string not visible
+4)unlimited data can be posted
+5)any type of data can be posted
+6)post req can be made only in one way:i.e-submitting forms
+
+
+process:
+whenever enduser sends--->request...>to web application
+then internally--->http req object will be created and that http req object--->passed as a parameter to...>corresponding view fn 
+view fn-->process the req--->create http response object
+puts the data into response object and ---->forwards response object to client(web browser)
+
+
+post:
+
+syntax:
+variablename=request.POST['key']
+ex:x=int(request.POST['t1'])
+
+GET"
+suntax:variablename=request.GET['key'])
+y=int(request.GET['t1'])
+
+
+
+how view identifies post req are recived by post or get req?
+
+by checking method="get"
+or method="post"
+
+so accordingly view can use (request.GET) or (request.POST) 
+ex:
+def input(request):
+ if request.method=="get":
+-------
+--------
+ else:
+---------
+-------
+
+--->uptonow data is displayed in text format but now we want HTML page as o/p for that in response obj,we write html code so make this chnages:
+
+
+
+->{{ }}.....>template tag and code within this we call it jinja2 code
+
+why template tag?
+-for passing dynamic content from views to template file
+
+#passing multiple dict values to a template file
+#passing currentday,currentmonth,currentyear to a template file
